@@ -487,7 +487,7 @@ Ooh
 		elif "no" in yawning.lower():
 			print("That's good to here, maybe you don't need coffee after all!")
 			while(True):
-				
+				pass
 		else:
 			print(self.error_statement)
 			return
