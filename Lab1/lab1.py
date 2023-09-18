@@ -487,7 +487,9 @@ Ooh
 		elif "no" in yawning.lower():
 			print("That's good to here, maybe you don't need coffee after all!")
 			while(True):
-				pass
+				print("Would you like the coffee for here or to go?")
+				self.__togo_or_dinein()
+
 		else:
 			print(self.error_statement)
 			return
@@ -516,7 +518,10 @@ Ooh
 			return
 
 	def __togo_or_dinein(self):
-		pass
+		response = input()
+		if "here" in response.lower() or "dine" in response.lower():
+			print("Did you get a chance to alert the barista about the sugar being out?")
+				
 
 
 	def __good_suggestion(self):
