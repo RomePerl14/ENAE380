@@ -439,24 +439,52 @@ Ooh
 		print("\n\t--- AUTOMATIC COFFEE ORDERER ---")
 		print("Picks a coffee order based on you inputs")
 		self.error_statement = "\n---\nI'm not quite sure what you said, could you try answering again?\n---\n"
-		self.looping = True
+		self.looping = False
+		self.start = True
+		self.switch1a = False
+		self.switch2a = False
+		self.switch3a = False
+		self.switch4a = False
+		self.switch5a = False
+		self.switch1b = False
+		self.switch2b = False
+		self.switch3b = False
+		self.switch4b = False
+		self.switch5b = False
 
-		while(True):
+		while(self.start):
+			self.looping = True
+			self.switch1a = True
+			self.switch2a = True
+			self.switch3a = True
+			self.switch4a = True
+			self.switch5a = True
+			self.switch1b = True
+			self.switch2b = True
+			self.switch3b = True
+			self.switch4b = True
+			self.switch5b = True
 			self.__coffee_prompter()
+
+		print("Thank you for using the Automatic Coffee Order!\n")
 
 
 	def __coffee_prompter(self):
-		while(True):
-			print("\nIs it hot or cold out?")
-			self.__hot_or_cold()
+		print("-- ORDER START --")
+		print("\nIs it hot or cold out?")
+		self.__hot_or_cold()
 	
 	def __hot_or_cold(self):
 		hot_or_cold = input()
 		if "cold" in hot_or_cold.lower():
-			print("cold")
+			print("\nOk, good to know that it's cold out (hopefully you are bundled up!)")
+			while(self.switch2b):
+				print("Is is currently morning or evening?")
+				self.__morning_evening2()
+
 		elif "hot" in hot_or_cold.lower():
 			print("\nOk, good to know it's hot out!")
-			while(True):
+			while(self.switch1a):
 				print("Is it currently morning or evening?")
 				self.__morning_evening()
 		else:
@@ -467,11 +495,15 @@ Ooh
 		morning_evening = input()
 		if "morning" in morning_evening.lower():
 			print("\nI see, good morning then!")
-			while(True):
+			while(self.switch2a):
 				print("Ok, have you been yawning a lot?")
 				self.__yawning()
 		elif "evening" in morning_evening.lower():
-			print("evening")
+			print("\nI see, good evening then! (like a vampire would say)")
+			while(self.switch1b):
+				print("Do you happen to be carrying your laptop, or a lot of books?")
+				self.__books_n_stuff()
+
 		else:
 			print(self.error_statement)
 			return
@@ -481,47 +513,124 @@ Ooh
 		yawning = input()
 		if "yes" in yawning.lower() or "yea" in yawning.lower():
 			print("\nAh jeez, well hopefully some coffee will fix that right up! (Or sleep)")
-			while(True):
+			while(self.switch3a):
 				print("Do you have younger kids at home? Or did you just come back from a workout? OR, are you just plain tired?")
 				self.__parent_workout_tired()
 		elif "no" in yawning.lower():
-			print("That's good to here, maybe you don't need coffee after all!")
-			while(True):
+			print("\nThat's good to here, maybe you don't need coffee after all!")
+			while(self.switch4a):
 				print("Would you like the coffee for here or to go?")
 				self.__togo_or_dinein()
-
 		else:
 			print(self.error_statement)
 			return
+		
 	def __parent_workout_tired(self):
 		response = input()
 		if "kids" in response.lower() or "toddlers" in response.lower() or "younger" in response.lower():
-			print("Ah I see, the young folk got you tired! Well no worries, heres my suggestions:")
+			print("\nAh I see, the young folk got you tired! Well no worries, heres my suggestions:")
 			print("\n\tYou should try a Double Shot Iced Latte, WITH a straw!\n")
 			while(self.looping):
 				print("Do you like my suggestion?")
 				self.__good_suggestion()
 		elif "work" in response.lower():
-			print("Ah, well glad you got a work out in! If you keep it up you probably won't even need coffee! Here's my suggestion:")
+			print("\nAh, well glad you got a work out in! If you keep it up you probably won't even need coffee! Here's my suggestion:")
 			print("\n\tYou should try a Cold Brew!\n")
 			while(self.looping):
 				print("Do you like my suggestion?")
 				self.__good_suggestion()
 		elif "tired" in response.lower():
-			print("I see, well no worries! We'll get you up and ready for the day (maybe try getting some sleep though ;D). Here's my suggestion:")
+			print("\nI see, well no worries! We'll get you up and ready for the day (maybe try getting some sleep though ;D). Here's my suggestion:")
 			print("\n\tI recommend trying a Double Espresso!\n")
 			while(self.looping):
 				print("Do you like my suggestion?")
 				self.__good_suggestion()
 		else:
-			self.error_statement
+			print(self.error_statement)
 			return
 
 	def __togo_or_dinein(self):
 		response = input()
 		if "here" in response.lower() or "dine" in response.lower():
-			print("Did you get a chance to alert the barista about the sugar being out?")
-				
+			while(self.switch5a):
+				print("\nDid you get a chance to alert the barista about the sugar being out?")
+				self.__let_barista_know()
+		elif "to" in response.lower() or "togo" in response.lower or "go" in response.lower():
+			print("\n\tI recommened a large Iced Latte!\n")
+			while(self.looping):
+				print("Do you like my suggestion?")
+				self.__good_suggestion()
+
+	def __let_barista_know(self):
+		response = input()
+		if "yes" in response.lower():
+			print("\n\tIn that case, I recommend getting an Iced Mocha!\n")
+			while(self.looping):
+				print("Do you like my suggestion?")
+				self.__good_suggestion()
+		elif "no" in response.lower():
+			print("\n\tIn that case, I recommend getting a Cappuccino!\n")
+			while(self.looping):
+				print("did you like my suggestion?")
+				self.__good_suggestion()
+		else:
+			print(self.error_statement)
+			return
+		
+	### -- EVENING BRANCH -- ###
+
+	def __books_n_stuff(self):
+		response = input()
+		if "yes" in response.lower():
+			print("\n\tIn that case, I recommend an Iced Vanilla red eye\n")
+			while(self.looping):
+				print("did you like my suggestion?")
+				self.__good_suggestion()
+		if "no" in response.lower():
+			print("\n\tIn that case, I recommend an Iced Chai Latte\n")
+			while(self.looping):
+				print("did you like my suggestion?")
+				self.__good_suggestion()
+
+	## --- COLD BRANCH -- ##
+
+	def __morning_evening2(self):
+			morning_evening = input()
+			if "morning" in morning_evening.lower():
+				print("\nI see, good morning then!")
+				while(self.switch3b):
+					print("Ok, are you from or visiting NYC?")
+					self._nyc()
+			elif "evening" in morning_evening.lower():
+				print("\nI see, good evening then! (like a vampire would say)")
+				while(self.switch4b):
+					print("Do you happen to be carrying your laptop, or a lot of books?")
+					self.__books_n_stuff2()
+			else:
+				print(self.error_statement)
+				return
+	
+	def __books_n_stuff2(self):
+		response = input()
+		if "yes" in response.lower():
+			print("\n\tIn that case, I recommend a Larged Latte or Cappuccino!\n")
+			while(self.looping):
+				print("did you like my suggestion?")
+				self.__good_suggestion()
+		if "no" in response.lower():
+			print("\n\tIn that case, I recommend Herbal Tea or Hot Chocolate!\n")
+			while(self.looping):
+				print("did you like my suggestion?")
+				self.__good_suggestion()
+		
+	def __nyc(self):
+		response = input()
+		if "yes" in response.lower or "I am" in response.lower():
+			print("\nAh I see, a local. Well welcome back presumably!")
+		elif "no" in response.lower or "visiting" in response.lower() or "visit" in response.lower():
+			print("Welcome tourist!")
+
+	
 
 
 	def __good_suggestion(self):
@@ -529,10 +638,32 @@ Ooh
 		if "yes" in response.lower() or "yea" in response.lower():
 			print("\nAwesome! Enjoy your coffee :)\n\n")
 			self.looping = False
+			self.switch1a = False
+			self.switch2a = False
+			self.switch3a = False
+			self.switch4a = False
+			self.switch5a = False
+			self.switch1b = False
+			self.switch2b = False
+			self.switch3b = False
+			self.switch4b = False
+			self.switch5b = False
+			self.start = False
 			return
 		elif "no" in response.lower():
 			print("\nDang! Sorry about my bad guess, let's run through it again and see if I can do better!\n\n")
 			self.looping = False
+			self.switch1a = False
+			self.switch2a = False
+			self.switch3a = False
+			self.switch4a = False
+			self.switch5a = False
+			self.switch1b = False
+			self.switch2b = False
+			self.switch3b = False
+			self.switch4b = False
+			self.switch5b = False
+
 			return
 		else:
 			print(self.error_statement)
