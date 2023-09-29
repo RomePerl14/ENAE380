@@ -3,6 +3,10 @@ This is your template for lab1. Implement all questions in the appropriate
 function. You are encouraged to implement helper functions as needed with
 a short (one-line) description of their purpose.
 """
+
+# Romeo Perlstein, section 0102
+# Hopefully this code is fun to read!
+
 import time, textstat
 
 class Lab1(object):
@@ -45,7 +49,7 @@ class Lab1(object):
 		else:
 			input_number2 = float(input_number2)
 		
-		result = (input_number1*input_number2)/2 # hardcoding the number two because it only takes in two numbers anyway
+		result = (input_number1+input_number2)/2 # hardcoding the number two because it only takes in two numbers anyway
 		print("The average between " + str(input_number1) + " and " + str(input_number2) + " is " + str(result))
 		return result # return the result for use outside of the class
 	
@@ -73,12 +77,52 @@ class Lab1(object):
 
 		if amount == None:
 			print("No input detected, please input the amount of money you would like change for:")
+			amount = input() # Get the input if there is none
+			try: # Check if it's an integer
+				amount = int(amount)
+			except: # If it's not, check what it is
+				try: # If it's a float, yell at the user, and then prompt again
+					float(amount)
+					print("You inputted a float, I only take EXACT change!")
+					print("\nPlease input the amount of money you would like change for (Exact change only):")
+					amount = input()
+					try: # If their second try fails, then kick em out of the program
+						amount = int(amount)
+					except:
+						print("Thats it, you're done! No change for you!")
+						return
+				except: # if it's not a float, yell again at the user and prompt for an input
+					print("You didn't even input a number! What gives?")
+					print("\nPlease input the amount of money you would like change for (Exact change, and a NUMBER please):")
+					amount = input()
+					try: # If their second try fails, then kick em out of the program
+						amount = int(amount)
+					except:
+						print("Thats it, you're done! No change for you!")
+						return
+		else: # Do the exact same thing as above, but this case checks for inputted values
 			try:
-				amount = int(input())
+				amount = int(amount)
 			except:
-				raise ImportError("You didn't input a number! WHY???")
-		else:
-			int(amount)
+				try:
+					float(amount)
+					print("You inputted a float, I only take EXACT change!")
+					print("\nPlease input the amount of money you would like change for (Exact change only):")
+					amount = input()
+					try:
+						amount = int(amount)
+					except:
+						print("Thats it, you're done! No change for you!")
+						return
+				except:
+					print("You didn't even input a number! What gives?")
+					print("\nPlease input the amount of money you would like change for (Exact change, and a NUMBER please):")
+					amount = input()
+					try:
+						amount = int(amount)
+					except:
+						print("Thats it, you're done! No change for you!")
+						return
 
 		print("\n\tInputted amount of coins: " + str(amount) + " cents")
 		print("\tNow counting change...\n")
@@ -380,7 +424,6 @@ Ooh
 		"""
 		Calculates the compound interest of an investment for a certain period of time, at a certain frequency
 
-
 		Parameters
 		----------
 		principal_amount : the inputted starting amount, in dollars
@@ -388,7 +431,6 @@ Ooh
 		years_of_investment : The planned length of investment time
 		compound_frequency : the time that the interest rate is applied in
 
-		
 		Returns
 		----------
 		amount_earned : the amount of money earned
@@ -397,30 +439,31 @@ Ooh
 		print("\n\t--- INTEREST CALCULATOR ---")
 		print(" Calculates the interest of a principal input\n")
 
-		if prinicpal_amount == None:
+		if prinicpal_amount == None: # If no prinicple amount inputted, make em input it
 			print("No prinicpal amount inputted, please input a principal amount: ")
 			prinicpal_amount = float(input())
 		else:
-			prinicpal_amount = float(prinicpal_amount)
-		if interest_rate == None:
+			prinicpal_amount = float(prinicpal_amount) # If there is, save it (and make sure it's a float)
+		if interest_rate == None: # If no interest rate, make em input one
 			print("No interest rate detected, please input an interest rate (in decimal form, 5% = 0.05): ")
 			interest_rate = float(input())
 		else:
-			interest_rate = float(interest_rate)
-		if years_of_investment == None:
+			interest_rate = float(interest_rate) # IF there is an input, save it (and make it a float)
+		if years_of_investment == None: # If no inputted years of investment, make em input it
 			print("No length of investment input detected, please input the desired length of investment (in years): ")
 			years_of_investment = int(input())
 		else:
-			years_of_investment = int(years_of_investment)
-		if compound_frequency == None:
+			years_of_investment = int(years_of_investment) # If inputted, save the sucker
+		if compound_frequency == None: # if no compound frequency, get the input
 			print("No compound frequency detected please input the desired compound frequency (1 == annually, 12 = monthly, etc): ")
 			compound_frequency = int(input())
 		else:
-			compound_frequency = int(compound_frequency)
+			compound_frequency = int(compound_frequency) # Else, save it
 
-		amount_earned = prinicpal_amount*(1+(.05/compound_frequency))**(compound_frequency*years_of_investment)
-		amount_earned = round(amount_earned, 2)
+		amount_earned = prinicpal_amount*(1+(.05/compound_frequency))**(compound_frequency*years_of_investment) # Do math
+		amount_earned = round(amount_earned, 2) # Round the math to two decimal places, since it's currency
 		
+		# Print the information to the user
 		print("\n\tTotal amount of interest earned after " + str(years_of_investment) + " years: ")
 		print("\t" + str(amount_earned) + " dollars")
 		print("\tinterested applied on every " + str(1/compound_frequency) + " year(s)\n")
@@ -428,7 +471,7 @@ Ooh
 
 	def coffee(self):
 		"""
-		Write your function descriptor here.
+		Tries to guess the users coffee order through a series of questions
 
 
 		Parameters
@@ -436,245 +479,293 @@ Ooh
 		None!
 
 		"""
-		print("\n\t--- AUTOMATIC COFFEE ORDERER ---")
-		print("Picks a coffee order based on you inputs")
-		self.error_statement = "\n---\nI'm not quite sure what you said, could you try answering again?\n---\n"
-		self.looping = False
-		self.start = True
-		self.switch1a = False
-		self.switch2a = False
-		self.switch3a = False
-		self.switch4a = False
-		self.switch5a = False
-		self.switch1b = False
-		self.switch2b = False
-		self.switch3b = False
-		self.switch4b = False
-		self.switch5b = False
+		print("\n\t--- AUTOMATIC COFFEE ORDERER ---") # Top print statement to signify code running
+		print("Picks a coffee order based on a questionaire") # Descrpition of code to output to user
 
-		while(self.start):
-			self.looping = True
-			self.switch1a = True
-			self.switch2a = True
-			self.switch3a = True
-			self.switch4a = True
-			self.switch5a = True
-			self.switch1b = True
-			self.switch2b = True
-			self.switch3b = True
-			self.switch4b = True
-			self.switch5b = True
-			self.__coffee_prompter()
+		# - local variable definitions - #
+		self.error_statement = "\n---\nI'm not quite sure what you said, could you try answering again?\n---\n" # Generic Error Statement
+		self.good_guess = False # Loop switch to see if the user liked out guess or not
+		self.start = True # Loop to continually run the program if the user is unsatisfied
+		self.on_off_switch = False # Switch to restart the questionaire
 
-		print("Thank you for using the Automatic Coffee Order!\n")
+		while(self.start): # Main loop
+			# Turn our switches "on" so that we can go through the process like normal
+			self.good_guess = True
+			self.on_off_switch = True
+			print("-- ORDER START --")
+			self.__coffee_prompter() # Start the prompting
+
+		print("Thank you for using the Automatic Coffee Order!\n") # Goodbye statement to the user
 
 
-	def __coffee_prompter(self):
-		print("-- ORDER START --")
-		print("\nIs it hot or cold out?")
-		self.__hot_or_cold()
+	def __coffee_prompter(self): # A function to prompt the user for their first question
+		print("\nIs it hot or cold out?") # First question
+		self.__hot_or_cold() # Get the response, and move on
 	
-	def __hot_or_cold(self):
-		hot_or_cold = input()
-		if "cold" in hot_or_cold.lower():
+	def __hot_or_cold(self): # Function to read in the reponse of the user from the previous question, and then move the user forward
+		response = input() # Get a response
+		if "cold" == response.lower(): # If they said anything with the word cold, it's cold out
 			print("\nOk, good to know that it's cold out (hopefully you are bundled up!)")
-			while(self.switch2b):
+			while(self.on_off_switch): # Loop the next questionaire incase the make a mistake here
 				print("Is is currently morning or evening?")
-				self.__morning_evening2()
-
-		elif "hot" in hot_or_cold.lower():
+				self.__morning_evening2() # Call the morning evening input for the cold branch
+		elif "hot" == response.lower():
 			print("\nOk, good to know it's hot out!")
-			while(self.switch1a):
+			while(self.on_off_switch):# Loop to the next questionaire
 				print("Is it currently morning or evening?")
-				self.__morning_evening()
+				self.__morning_evening() # Call the morning evening input for the hot branch
 		else:
-			print(self.error_statement)
+			print(self.error_statement) # Catch an error input
+			print("Try typing:\n\thot\n\tcold\n\n")
 			return
-		
-	def __morning_evening(self):
-		morning_evening = input()
-		if "morning" in morning_evening.lower():
+	
+	## ------ HOT BRANCH ------ ##
+	def __morning_evening(self): # Function to check if it's morning of evening for the hot branch, and then ask the next question
+		reponse = input() # get the input
+		if "morning" == reponse.lower(): # check for the word morning in the response
 			print("\nI see, good morning then!")
-			while(self.switch2a):
-				print("Ok, have you been yawning a lot?")
-				self.__yawning()
-		elif "evening" in morning_evening.lower():
+			while(self.on_off_switch): # start another loop to make sure this question can be repeated upon mistake
+				print("Ok, have you been yawning a lot?") # New question
+				self.__yawning() # Get the yawning input
+		elif "evening" == reponse.lower(): # check for the word evening in the response
 			print("\nI see, good evening then! (like a vampire would say)")
-			while(self.switch1b):
-				print("Do you happen to be carrying your laptop, or a lot of books?")
-				self.__books_n_stuff()
-
+			while(self.on_off_switch):
+				print("Do you happen to be carrying your laptop, or a lot of books?") # New question
+				self.__books_n_stuff() # Get the input from the new question
 		else:
-			print(self.error_statement)
+			print(self.error_statement) # IF they said something silly, return and reloop
+			print("Try typing:\n\tmorning\n\tevening\n")
 			return
 
 	### -- MORNING BRANCH -- ###
-	def __yawning(self):
-		yawning = input()
-		if "yes" in yawning.lower() or "yea" in yawning.lower():
+	def __yawning(self): # Function to check if the user is yawning and then ask the next question
+		response = input() # Get the input
+		if "yes" == response.lower(): # if any affirmation in the input, punch it
 			print("\nAh jeez, well hopefully some coffee will fix that right up! (Or sleep)")
-			while(self.switch3a):
-				print("Do you have younger kids at home? Or did you just come back from a workout? OR, are you just plain tired?")
-				self.__parent_workout_tired()
-		elif "no" in yawning.lower():
+			while(self.on_off_switch): # Start looping the new question
+				print("Do you have younger kids at home? Or did you just come back from a workout? OR, are you just plain tired?") # New question
+				self.__parent_workout_tired() # Get the input for the new question
+		elif "no" == response.lower(): # if no is at all in the response, punch it this way
 			print("\nThat's good to here, maybe you don't need coffee after all!")
-			while(self.switch4a):
-				print("Would you like the coffee for here or to go?")
-				self.__togo_or_dinein()
+			while(self.on_off_switch): # Start looping the new question
+				print("Would you like the coffee for here or to go?") # new question
+				self.__togo_or_dinein() # Get the input for the new question
 		else:
-			print(self.error_statement)
+			print(self.error_statement) # catch an error input and return the sucker to try again
+			print("Try typing:\n\tyes\n\tno\n")
 			return
 		
-	def __parent_workout_tired(self):
-		response = input()
-		if "kids" in response.lower() or "toddlers" in response.lower() or "younger" in response.lower():
+	def __parent_workout_tired(self): # Function to ask if why the user is tired, and then suggest an order
+		response = input() # Get the input
+		if "i have kids" == response.lower() or "toddlers" in response.lower() or "younger" in response.lower(): # If kids, toddlers, or younger in the input, start the statement
 			print("\nAh I see, the young folk got you tired! Well no worries, heres my suggestions:")
-			print("\n\tYou should try a Double Shot Iced Latte, WITH a straw!\n")
-			while(self.looping):
-				print("Do you like my suggestion?")
-				self.__good_suggestion()
-		elif "work" in response.lower():
+			print("\n\tYou should try a Double Shot Iced Latte, WITH a straw!\n") # Suggestion
+			while(self.good_guess): # Start the loop to see if they like our suggestion
+				print("Do you like my suggestion?") # New question
+				self.__good_suggestion() # Loop
+		elif "i was working out" == response.lower(): # If work is in the response, we go this way
 			print("\nAh, well glad you got a work out in! If you keep it up you probably won't even need coffee! Here's my suggestion:")
-			print("\n\tYou should try a Cold Brew!\n")
-			while(self.looping):
-				print("Do you like my suggestion?")
-				self.__good_suggestion()
-		elif "tired" in response.lower():
+			print("\n\tYou should try a Cold Brew!\n") # program response
+			while(self.good_guess): # Start the loop for a new question
+				print("Do you like my suggestion?") # New question
+				self.__good_suggestion() # Get the input for the new question
+		elif "i'm tired" == response.lower(): # Same as above
 			print("\nI see, well no worries! We'll get you up and ready for the day (maybe try getting some sleep though ;D). Here's my suggestion:")
 			print("\n\tI recommend trying a Double Espresso!\n")
-			while(self.looping):
+			while(self.good_guess):
 				print("Do you like my suggestion?")
 				self.__good_suggestion()
 		else:
-			print(self.error_statement)
+			print(self.error_statement) # Catch an error and rerun the loop
+			print("Try typing:\n\tI have kids\n\tI was working out\n\tI'm tired\n")
 			return
 
-	def __togo_or_dinein(self):
-		response = input()
-		if "here" in response.lower() or "dine" in response.lower():
-			while(self.switch5a):
-				print("\nDid you get a chance to alert the barista about the sugar being out?")
-				self.__let_barista_know()
-		elif "to" in response.lower() or "togo" in response.lower or "go" in response.lower():
+	def __togo_or_dinein(self): # Function to check if the user would like to have the coffee for here or to go, and provide an order guess
+		response = input() # Get the input
+		if "here" == response.lower(): # if here or dine are in the response somewhere, we say that they're dining in
+			while(self.on_off_switch): # loop for a new question
+				print("\nDid you get a chance to alert the barista about the sugar being out?") # New question
+				self.__let_barista_know() # Get the input for the new question
+		elif "to go" == response.lower() or "togo" == response.lower(): # If to, togo, or go are in the response, we are giving them coffee to go
 			print("\n\tI recommened a large Iced Latte!\n")
-			while(self.looping):
-				print("Do you like my suggestion?")
-				self.__good_suggestion()
-
-	def __let_barista_know(self):
-		response = input()
-		if "yes" in response.lower():
-			print("\n\tIn that case, I recommend getting an Iced Mocha!\n")
-			while(self.looping):
-				print("Do you like my suggestion?")
-				self.__good_suggestion()
-		elif "no" in response.lower():
-			print("\n\tIn that case, I recommend getting a Cappuccino!\n")
-			while(self.looping):
-				print("did you like my suggestion?")
-				self.__good_suggestion()
+			while(self.good_guess): # loop for a new question
+				print("Do you like my suggestion?") # New question
+				self.__good_suggestion() # Get the response for the new question
 		else:
 			print(self.error_statement)
+			print("Try typing:\n\there\n\tto go\n")
+			return
+
+	def __let_barista_know(self): # Function to check if the user let the barista know about sugar being out, and then ask the next question
+		response = input() # Input acquiring
+		if "yes" == response.lower(): # If yes is in response
+			print("\n\tIn that case, I recommend getting an Iced Mocha!\n")
+			while(self.good_guess): # Ask if it was a good guess
+				print("Do you like my suggestion?")
+				self.__good_suggestion() # Check to see if they liked the guess
+		elif "no" == response.lower():
+			print("\n\tIn that case, I recommend getting a Cappuccino!\n")
+			while(self.good_guess): # Ask if they liked my guess
+				print("did you like my suggestion?") 
+				self.__good_suggestion() # Check to see if they did like it
+		else:
+			print(self.error_statement)
+			print("Try typing:\n\tyes\n\tno\n")
 			return
 		
 	### -- EVENING BRANCH -- ###
 
-	def __books_n_stuff(self):
-		response = input()
-		if "yes" in response.lower():
-			print("\n\tIn that case, I recommend an Iced Vanilla red eye\n")
-			while(self.looping):
+	def __books_n_stuff(self): # Function to see if the user is holding a lot of books, and then ask the next question
+		response = input() # Get the input to the previous question
+		if "yes" == response.lower():
+			print("\n\tIn that case, I recommend an Iced Vanilla Red Eye\n")
+			while(self.good_guess): # Ask if we made a good guess
 				print("did you like my suggestion?")
-				self.__good_suggestion()
-		if "no" in response.lower():
+				self.__good_suggestion() # check
+		elif "no" == response.lower():
 			print("\n\tIn that case, I recommend an Iced Chai Latte\n")
-			while(self.looping):
+			while(self.good_guess): # Ask
 				print("did you like my suggestion?")
-				self.__good_suggestion()
+				self.__good_suggestion() # Check
+		else:
+			print(self.error_statement)
+			print("Try typing:\n\tyes\n\tno\n") # Catch
+			return
 
-	## --- COLD BRANCH -- ##
+	## ------- COLD BRANCH ------- ##
+	# Note to reviewer: Everything below is the same type of model as above, ask a question, loop until they provide a good answer,
+	# Then move on to the next question and loop again, etc etc... until we get to a guess
 
-	def __morning_evening2(self):
+	def __morning_evening2(self): # Function to see if it's morning or evening for the cold branch, and then ask the next question
 			morning_evening = input()
-			if "morning" in morning_evening.lower():
+			if "morning" == morning_evening.lower():
 				print("\nI see, good morning then!")
-				while(self.switch3b):
-					print("Ok, are you from or visiting NYC?")
-					self._nyc()
-			elif "evening" in morning_evening.lower():
+				while(self.on_off_switch):
+					print("Ok, (for context, we are in New York, New York) are you visiting NYC, or do you live here?")
+					self.__nyc()
+			elif "evening" == morning_evening.lower():
 				print("\nI see, good evening then! (like a vampire would say)")
-				while(self.switch4b):
+				while(self.on_off_switch):
 					print("Do you happen to be carrying your laptop, or a lot of books?")
 					self.__books_n_stuff2()
 			else:
 				print(self.error_statement)
+				print("Try typing:\n\tevening\n\tmorning\n")
 				return
 	
-	def __books_n_stuff2(self):
+	### -- EVENING BRANCH -- ###
+	def __books_n_stuff2(self): # Function to ask if the user is holding a lot of books, and then recommend a coffee
 		response = input()
-		if "yes" in response.lower():
+		if "yes" == response.lower():
 			print("\n\tIn that case, I recommend a Larged Latte or Cappuccino!\n")
-			while(self.looping):
+			while(self.good_guess):
 				print("did you like my suggestion?")
 				self.__good_suggestion()
-		if "no" in response.lower():
+		elif "no" == response.lower():
 			print("\n\tIn that case, I recommend Herbal Tea or Hot Chocolate!\n")
-			while(self.looping):
+			while(self.good_guess):
 				print("did you like my suggestion?")
 				self.__good_suggestion()
-		
-	def __nyc(self):
-		response = input()
-		if "yes" in response.lower or "I am" in response.lower():
-			print("\nAh I see, a local. Well welcome back presumably!")
-		elif "no" in response.lower or "visiting" in response.lower() or "visit" in response.lower():
-			print("Welcome tourist!")
-
-	
-
-
-	def __good_suggestion(self):
-		response = input()
-		if "yes" in response.lower() or "yea" in response.lower():
-			print("\nAwesome! Enjoy your coffee :)\n\n")
-			self.looping = False
-			self.switch1a = False
-			self.switch2a = False
-			self.switch3a = False
-			self.switch4a = False
-			self.switch5a = False
-			self.switch1b = False
-			self.switch2b = False
-			self.switch3b = False
-			self.switch4b = False
-			self.switch5b = False
-			self.start = False
-			return
-		elif "no" in response.lower():
-			print("\nDang! Sorry about my bad guess, let's run through it again and see if I can do better!\n\n")
-			self.looping = False
-			self.switch1a = False
-			self.switch2a = False
-			self.switch3a = False
-			self.switch4a = False
-			self.switch5a = False
-			self.switch1b = False
-			self.switch2b = False
-			self.switch3b = False
-			self.switch4b = False
-			self.switch5b = False
-
-			return
 		else:
 			print(self.error_statement)
+			print("Try typing:\n\tyes\n\tno\n")
+			return
+		
+	### -- MORNING BRANCH -- ###
+	def __nyc(self): # Function to see if the user is from NYC (what?), and then ask the next question
+		response = input()
+		if "i live here" == response.lower():
+			print("\nAh I see, a local. Well welcome back presumably!")
+			while(self.on_off_switch):
+				print("(For context, we apparently have a board of rotating specialty coffees)")
+				print("Do you normally check out our board of rotating specialty coffees?")
+				self.__did_you_even_look()
+		elif "visiting" == response.lower():
+			print("Welcome tourist!")
+			print("\n\tI would recommend getting a classic Coffee with Cream and Sugar!\n")
+			while(self.good_guess):
+				print("did you like my suggestion?")
+				self.__good_suggestion()
+		else:
+			print(self.error_statement)
+			print("Try typing:\n\tI live here\n\tvisiting\n")
 			return
 
+	def __did_you_even_look(self): # Function to see if the user looked at the specials, and then ask a new question
+		response = input()
+		if "sometimes" == response.lower():
+			print("\n\tIn that case, I recommended getting a Soy Latte!\n")
+			while(self.good_guess):
+				print("did you like my suggestion?")
+				self.__good_suggestion()
+		elif "what is that?" == response.lower() or "what is that" == response.lower():
+			print("\nOh, it's a board where we display our different specialty coffees!")
+			print("\n\tIn that case I would recommend you get the Bodega Drip Coffee!\n")
+			while(self.good_guess):
+				print("did you like my suggestion?")
+				self.__good_suggestion()
+		elif "of course" == response.lower() or "of course!" == response.lower():
+			print("\nThanks for checking out our specials, glad to know someone is actually looking at them :)")
+			while(self.on_off_switch):
+				print("Would you happen to be a smoker, by any chance?")
+				self.__do_I_smoke()
+		else:
+			print(self.error_statement)
+			print("Try saying: \n\tSometimes\n\tWhat is that?\n\tOf course!\n")
+			return
+		
+	def __do_I_smoke(self): # Function to see if the user is a cringe smoker (cringe), and then ask a new question
+		response = input()
+		if "yes" == response.lower():
+			print("\nAh, well I would remcommend dropping that habit!")
+			print("\n\tIn that case though, I would recommend getting an Americano!\n")
+			while(self.good_guess):
+				print("did you like my suggestion?")
+				self.__good_suggestion()
+		elif "no" == response.lower():
+			print("\nThats great to hear! Smoking is no good")
+			while(self.on_off_switch == True):
+				print("Would you consider yourself a \"millenial?\"")
+				self.__millenial_falcon()
+		else:
+			print(self.error_statement)
+			print("Try saying\n\tyes\n\tno\n")
+			return
+		
+	def __millenial_falcon(self): # Function to see if the user thinks they are a millenial, and then ask the next question
+		response = input()
+		if "yes" == response.lower():
+			print("\n\tIn that case, I recommend you get the Flat White!\n")
+			while(self.good_guess):
+				print("did you like my suggestion?")
+				self.__good_suggestion()
+		elif "no" == response.lower():
+			print("\n\t In that case, I recommend you get the Cortado!\n")
+			while(self.good_guess):
+				print("did you like my suggestion?")
+				self.__good_suggestion()
+		else:
+			print(self.error_statement)
+			print("Try typing:\n\tyes\n\tno\n")
+			return
 
-
-	
-
-
-
+	def __good_suggestion(self): # Function to see if we made a good suggestion or not
+		response = input()
+		if "yes" == response.lower(): # If we did, turn off all of the switches so we can end the prorgam
+			print("\nAwesome! Enjoy your coffee :)\n\n")
+			self.good_guess = False # Turn off this switch so that we don't loop again
+			self.on_off_switch = False # Turn all every switch to that we don't loop them
+			self.start = False # We are going to loop at the very top, so turn off the while loop so we skip the next iteration
+			return
+		elif "no" == response.lower(): # If we did bad, reset the switches to false, and then when we begin the main loop, they will be set back to true
+			print("\nDang! Sorry about my bad guess, let's run through it again and see if I can do better!\n\n")
+			self.good_guess = False # Set this to false so we don't repeat it
+			self.on_off_switch = False # Set this to false so that every previous function doesn't get called again
+			return
+		else:
+			print(self.error_statement) # Throw an error statement
+			print("Try typing:\n\tyes\n\tno\n")
+			return
 
 
 #If you want to test your methods within this code, first, create an object of the class Lab1
@@ -682,10 +773,14 @@ Ooh
 #the method "average" from that instantiation. You can do this for any of the methods that you write. 
 
 obj_name = Lab1()
-# obj_name.coffee()
+print("\t-- COFFEE PROMPTER --\n\n")
 obj_name.coffee()
-# obj_name.lyrics()
-# obj_name.money(223895)
-# obj_name.average(input_number2=2023)
+print("\n\n\n\n\t-- LYRICS CHECKER --\n\n")
+obj_name.lyrics()
+print("\n\n\n\n\t-- INTEREST CALCULATOR -- \n\n")
+obj_name.money()
+print("\n\n\n\n\t-- AVERAGE CALCULATOR --\n\n")
+obj_name.average()
+print("\n\n-- END LAB1 --\n\n")
 
 
