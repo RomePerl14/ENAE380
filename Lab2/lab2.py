@@ -3,11 +3,27 @@ This is your template for lab2. Implement all questions in the appropriate
 function. You are encouraged to implement helper functions as needed with
 a short (one-line) description of their purpose.
 """
+# Romeo Perlstein, section 0102
+# Hopefully this code is fun to read!
 
 import time, random
 
 # Function to generate a random array of size n, with the limit being 0 -> n
 def random_array_generator(n : int):
+    '''
+    Description
+    ----------
+    Generates an array of random numbers with a given length
+
+    Parameters
+    ----------
+        n: max length of the array
+
+    Returns
+    ----------
+        random_array : The now random array
+    '''
+
     random_array = [] # Define an array
     for i in range(n): # Iterate the length of n
         random_array.append(random.randint(0, n)) # add a random number to the array
@@ -15,6 +31,21 @@ def random_array_generator(n : int):
 
 # Function to linearly search an array. In this case, it's the random arrays
 def linear_searcher(k : int, array : list):
+    '''
+    Description
+    ----------
+    Uses linear search to find a value of an array
+
+    Parameters
+    ----------
+        k: value to find
+        array: a list to look through (contrary, aint it?)
+
+    Returns
+    ----------
+        indicies : The indicies that the number was found at
+    '''
+
     start_time = time.time() # Save the time we started at
     indicies = [] # Create an index to account for the possibility of multiple numbers at different indicies
     print_display = False # Switch to see if we should print the display or not
@@ -42,12 +73,41 @@ def linear_searcher(k : int, array : list):
         return
 
 def array_sorter(n : int): # Creates a sorted array from a given length
+    '''
+    Description
+    ----------
+    Creates a sorted array using a given length
+
+    Parameters
+    ----------
+        n: a length value (array's final value will be n-1)
+
+    Returns
+    ----------
+        sorted_list : an, in fact, sorted list
+    '''
+
     sorted_list = []
     for i in range(n):
         sorted_list.append(i)
     return sorted_list
 
 def binary_searcher(k : int, array : list): # Searches for a value "k" through a sorted array
+    '''
+    Description
+    ----------
+    A function to perform binary search on a list
+
+    Parameters
+    ----------
+        k : an integer to search for
+        array : a list (contrary, aint it?)
+
+    Returns
+    ----------
+        middle_check : Index at which the number was found
+    '''
+
     looping = True
     middle_check = 0
     bottom_check = 0
@@ -71,15 +131,22 @@ def binary_searcher(k : int, array : list): # Searches for a value "k" through a
 
 def merger(a, l, m, r): # Merges two subarray's into one
     '''
-    INPUT:
+    Description
+    ----------
+    A function to merge lists together
+
+    Parameters
+    ----------
         a : an array of length n
         l : current index value of the main array
         m : value obtained through two expression comparisons
         r : value obtained through two expression comparisons
 
-    OUTPUT:
+    Returns
+    ----------
         nada! (uses pass by reference)
     '''
+
     # Set iteration length values
     n1 = m - l + 1
     n2 = r - m
@@ -124,14 +191,17 @@ SOURCE: https://www.geeksforgeeks.org/iterative-merge-sort/
 class Lab2(object):
     def bubble_sort(self, my_list):
         """
-
+        Description
+        ----------
+        A function to sort lists using the merge sort algorithm
+        
         Parameters
         ----------
-        my_list : list of elements to sort
+            my_list : list of elements to sort
 
         Returns
         -------
-        list : sorted list in ascending order
+            list : sorted list in ascending order
 
         """
 
@@ -163,14 +233,17 @@ class Lab2(object):
 
     def selection_sort(self, my_list):
         """
+        Description
+        ----------
+        A function to sort lists using the merge sort algorithm
 
         Parameters
         ----------
-        my_list : list of elements to sort
+            my_list : list of elements to sort
 
         Returns
         -------
-        list : sorted list in ascending order
+            list : sorted list in ascending order
         """
 
         start_time = time.time()
@@ -196,14 +269,17 @@ class Lab2(object):
                 
     def insertion_sort(self, my_list):
         """
+        Description
+        ----------
+        A function to sort lists using the merge sort algorithm
 
         Parameters
         ----------
-        my_list : list of elements to sort
+            my_list : list of elements to sort
 
         Returns
         ----------
-        list : sorted list in ascending order
+            list : sorted list in ascending order
         """      
 
         start_time = time.time()
@@ -234,14 +310,17 @@ class Lab2(object):
 
     def merge_sort(self, my_list):
         """
+        Description
+        ----------
+        A function to sort lists using the merge sort algorithm
 
         Parameters
         ----------
-        my_list : list of elements to sort
+            my_list : list of elements to sort
 
         Returns
         -------
-        list : sorted list in ascending order
+            list : sorted list in ascending order
         """
 
         start_time = time.time()
@@ -270,13 +349,17 @@ class Lab2(object):
    
     def readFile(self, filename):
         """
+        Description
+        ----------
+        Reads a file, which is a list of characters, and then sorts it
+
         Parameters
         ----------
-        filename : The file path (relative or absolute) to the file being looked at
+            filename : The file path (relative or absolute) to the file being looked at
 
         Returns
         ----------
-        Nothing (Creates a new file)
+            Nothing (Creates a new file)
 
         """
 
@@ -303,58 +386,288 @@ class Lab2(object):
         
         print("Done sorting test Numbers file!")
 
-    def vigenere(self, plaintxt = None, key = None):
+    def vigenere(self, plaintxt = None, _key = None):
         """
+        Description
+        ---------
+        encrypts an inputted string using the Vigenere cipher and an inputted key
+
         Parameters
         ----------
-        plaintxt : A string of text to be encrypted
-        key : The key used to encrypt the text
+            plaintxt : A string of text to be encrypted
+            key : The key used to encrypt the text
 
         Returns
         ----------
-        Nothing (prints encrypted text)
+            Nothing (prints encrypted text)
         """
-        print("\n")
+
         if plaintxt == None:
-            print("You didn't input a string to encrypt. Please do so now:")
+            print("\nYou didn't input a string to encrypt. Please do so now:")
             plaintxt = input()
-        if key == None:
-            print("You didn't input a keyword. Please do so now:")
-            key = input()
+        if _key == None:
+            print("\nYou didn't input a keyword. Please do so now:")
+            _key = input()
         plaintxt = str(plaintxt)
-        crpyt_key = str(plaintxt)
+        crpyt_key = str(_key)
         
-        # IDK why we can't use regex since that would make this 10x more useful but whateves - gonna remake regex then
+        # IDK why we can't use regex since that would make this 10x more useful but whateves - gonna remake regex then (in fairness this works better)
         letters_list = {"a":0,"b":1,"c":2,"d":3,"e":4,"f":5,"g":6,"h":7,"i":8,"j":9,"k":10,"l":11,"m":12,"n":13,"o":14,"p":15,"q":16,"r":17,"s":18,"t":19,"u":20,"v":21,"w":22,"x":23,"y":24,"z":25}
-        # letters_list_upper = {"A":0,"B":1,"C":2,"D":3,"E":4,"F":5,"G":6,"H":7,"I":8,"J":9,"K":10,"L":11,"M":12,"N":13,"O":14,"P":15,"Q":16,"R":17,"S":18,"T":19,"U":20,"V":21,"W":22,"X":23,"Y":24,"Z":25}
+        numbers_list = {0:"a",1:"b",2:"c",3:"d",4:"e",5:"f",6:"g",7:"h",8:"i",9:"j",10:"k",11:"l",12:"m",13:"n",14:"o",15:"p",16:"q",17:"r",18:"s",19:"t",20:"u",21:"v",22:"w",23:"x",24:"y",25:"z"}
 
         # Because there is no reason to keep the word capitalized, and because I'm not going to go through the effort of doing multiple branches of if statements to check if its UPPER or LOWER case, do this:
-        plaintxt = plaintxt.lower()
-        crpyt_key = crpyt_key.lower()
+        plaintxt = plaintxt.lower() # Make it lower case
+        crypt_key = crpyt_key.lower() # Make it lower case
+        crypt_key_real = "" # Get a replace string that we can build up with characters
+        encrypted_string = "" # Same thing as above except for our encrypted string
 
-        key_counter = 0
-        for i in range(len(plaintxt)):
-            if plaintxt[i] in letters_list.keys():
-                
+        # Get only the letters from the key, ignore everything else
+        for i in range(len(crpyt_key)): # Iterate through the entire string
+            if crypt_key[i] in letters_list.keys(): # Check if the letter is in our letter dictionary
+                crypt_key_real = crypt_key_real + crypt_key[i] # Add the letter to our new key variable
 
+        # Loop through and remake the string
+        key_counter = 0 # create a counter so that we can loop back through the string
+        for i in range(len(plaintxt)): # Go through the whole input string
+            if plaintxt[i] in letters_list.keys(): # Check if the current letter is infact, a letter
+                number = letters_list[plaintxt[i]]+letters_list[crypt_key_real[key_counter]] # If it is, get the number offset (the number of the letter plus the number of the cipher)
+                if number >= 26: # If we're equal to 26, or we're over it, subtract 26 to get the looped over number
+                    number = number-26
+                encrypted_string = encrypted_string + numbers_list[number] # Create our new string per iteration
+                key_counter = key_counter + 1 # Up the key counter
+            else: # If it's not a letter, add it to the string without any modification
+                encrypted_string = encrypted_string + plaintxt[i]
+            if key_counter == len(crypt_key_real): # Check to make sure we haven't gone past the length of the index
+                key_counter = 0 # If so, reset it
+        print("\nHere is your encrypted text:\n\t" + encrypted_string + "\n") # print the result
 
-
-
-    def decrypt(self):
+    def decrypt(self, filepath = None, ec_string = None, key_path = None, single_key = None):
         """
-        Insert descriptions here. Make sure to comment this code thoroughly.
+        Description
+        ----------
+        Deciphers an encrypted string of text using the Vigenere cipher
+        
+        Parameters
+        ----------
+            filepath : path to the file containing the encrypted string (can be none)
+            ec_string: encrypted string (can be none)
+            key_path: path to a file containing possible decryption keys (can be none)
+            key_list: A list of possible decryption keys (can be none)
+
+        Returns
+        ----------
+            nothing (prints string to the terminal)
         """
-        pass
+
+        letters_list = {"a":0,"b":1,"c":2,"d":3,"e":4,"f":5,"g":6,"h":7,"i":8,"j":9,"k":10,"l":11,"m":12,"n":13,"o":14,"p":15,"q":16,"r":17,"s":18,"t":19,"u":20,"v":21,"w":22,"x":23,"y":24,"z":25}
+        numbers_list = {0:"a",1:"b",2:"c",3:"d",4:"e",5:"f",6:"g",7:"h",8:"i",9:"j",10:"k",11:"l",12:"m",13:"n",14:"o",15:"p",16:"q",17:"r",18:"s",19:"t",20:"u",21:"v",22:"w",23:"x",24:"y",25:"z"}
+
+        key_list = []
+        # Check for inputs
+        if filepath == None and ec_string == None: # If none, get the user to input
+            print("Please input the encrypted string of text:")
+            ec_string = str(input())
+        elif filepath != None: # If a filepath is inputted, take it and run
+            print("detected inputted file path, reading encrypted string from: " + str(filepath))
+            ec_string = str(open(filepath, "r").read()) # Read the first line
+        elif ec_string != None: # If a string is inputted, take it an run
+            ec_string = str(ec_string)
+
+        if key_path == None and single_key == None: # If nothing, prompt for a single key to try
+            print("Please input a possible key to try:")
+            key_list.append(str(input())) # append our list of keys (hold over from reading in files)
+        elif key_path != None: # If there is a path inputted, read from the path
+            print("Detected inputted file for keys, reading from: " + key_path)
+            key_list = open(key_path, "r").readlines() # Read every line and shove it into the array
+            for i in range(len(key_list)):
+                key_list[i] = key_list[i].replace("\n", "") # Get rid of all of the \n's and such
+        elif single_key != None: # If a single key was inputed, use it
+            print("Got inputted single key value, using it: " + str(single_key))
+            key_list.append(str(single_key)) # add it to our list of keys
+        
+        list_o_keys = [] # Create a new list of keys
+        temp_key = "" # create a string to build
+        for i in range(len(key_list)): # Go through every key in the list
+            for ii in range(len(key_list[i])): # Go through ever letter in a single key
+                if key_list[i][ii] in letters_list.keys(): # Check to see if it's a letter
+                    temp_key = temp_key + key_list[i][ii] # If it is, save it to our string builder
+            list_o_keys.append(temp_key) # Added it to our list of keys, after we've siphoned all of the bad characters out
+            temp_key = "" # Reset for the next key
+        ec_string = ec_string.lower()
+        decrypted_strings = []
+        for iii in range(len(list_o_keys)):
+            decrypted_string = ""
+            key_counter = 0 # create a counter so that we can loop back through the string
+            for i in range(len(ec_string)): # Go through the whole input string
+                if ec_string[i] in letters_list.keys(): # Check if the current letter is infact, a letter
+                    number = letters_list[ec_string[i]]-letters_list[list_o_keys[iii][key_counter]] # If it is, get the number offset (the number of the letter plus the number of the cipher)
+                    if number < 0: # If we're equal to 0, or we're under it, subtract 26 to get the looped over number
+                        number = number+26
+                    decrypted_string = decrypted_string + numbers_list[number] # Create our new string per iteration
+                    key_counter = key_counter + 1 # Up the key counter
+                else: # If it's not a letter, add it to the string without any modification
+                    decrypted_string = decrypted_string + ec_string[i]
+                if key_counter == len(list_o_keys[iii]): # Check to make sure we haven't gone past the length of the index
+                    key_counter = 0 # If so, reset it
+
+            # Common words to try and crack it
+            if " how " in decrypted_string.lower() and " this " in decrypted_string.lower() and " from " in decrypted_string.lower() and " the " in decrypted_string.lower() and " to " in decrypted_string.lower() and " is " in decrypted_string.lower() and " and " in decrypted_string.lower() and " in " in decrypted_string.lower(): 
+                print("\nHere is your decrypted text:\n\t" + decrypted_string + "\n") # print the result
+                return # THIS ONE SUCKED AGHHHHHHH IT WAS GUESS AND CHECK FOR LIKE AN HOUR AHHHHH
 
 class Animal:
-    """ implement this class below with appropriate function descriptors """
-    pass
+    '''
+    Description
+    ----------
+    An animal class that does animal things, like be created and also say hi when prompted
+    
+    Parameters
+    ----------
+        _name : The name you want to give this animal
+        _color: The color you want the animal to be
+    '''
+
+    # Properties
+    name : str
+    color :str
+
+    def __init__(self, _name : str, _color: str):
+        '''
+        Description
+        ----------
+        An animal class that does animal things, like be created and also say hi when prompted
+        
+        Parameters
+        ----------
+            _name : The name you want to give this animal
+            _color: The color you want the animal to be
+        '''
+
+        print("\tLet there be life! [lighting cracks from the stormy sky above]")
+        self.name = _name # Save the inputs to their respective properties
+        self.color = _color
+        print("\twelcome " + self.name + "! [The stormy clouds clear, revealing the sun]\n")
+
+    def speak(self):
+        '''
+        Description
+        ----------
+        A method to make the object "speak" - will say a psuedo random phrase every time it's called
+        
+        Parameters
+        ----------
+            none
+        '''
+
+        # Randomly generate an array, and use that to pick what Hi statement we're going to output
+        spin = random_array_generator(4)
+        if spin[0] == 0:
+            return print("[" + self.name + "] Hello!")
+        elif spin[0] == 1:
+            return print("[" + self.name + "] Howdy!")
+        elif spin[0] == 2:
+            return print("[" + self.name + "] Hey!")
+        elif spin[0] == 3:
+            return print("[" + self.name + "] Hi!")
+        else:
+            return print("[" + self.name + "] *animal noise*")
 
 class Runner(Animal):
-    """ implement this class below with appropriate function descriptors """
-    pass
+    '''
+    Description
+    ----------
+    An animal that can run really fast (or really slow?)
+    
+    Parameters
+    ----------
+        _name: The name of the animal
+        _color: The color of the animal
+        _speed: The speed of the runner
+    '''
 
+    speed = 0
 
+    def __init__(self, _name, _color, _speed):
+        '''
+        Description
+        ----------
+        An animal that can run really fast (or really slow?)
+        
+        Parameters
+        ----------
+            _name : The name you want to give this animal
+            _color: The color you want the animal to be
+            _speed: The speed of the runner (m/s)
+        '''
+
+        super().__init__(_name, _color) # For the parent class
+        self.speed = _speed
+
+def animal_race(animal1 : Runner, animal2 : Runner, track_length):
+    '''
+    Description
+    ----------
+    An excited race between two animals!!! Who's going to win?
+    
+    Parameters
+    ----------
+        animal1 : The first animal in the race
+        animal2 : The second animal in the race
+        track_length: The length of the track (in meters)
+    '''
+
+    # Display a bunch of preliminary text
+    print("\n\t----- ANIMAL RACE -----")
+    print("\n\tWelcome to the animal race! I hope everyone is ready for an exciting day of racing!")
+    print("\tOur competitors today are:\n\n" + animal1.name + ", who is the color " + animal1.color)
+    animal1.speak()
+    print(animal2.name + ", who is the color " + animal2.color)
+    animal2.speak()
+    print("\n\tToday, our track is " + str(track_length) + " meters long! Let's see how our racers hold up")
+    print("\tLadies and Gentlemen, bugs and birds, lets get ready to race!")
+    print("\n\tAre the racers ready?\n")
+    animal1.speak()
+    animal2.speak()
+    print("\n\tAlrighty then! Here we go...")
+    time.sleep(2)
+    print("\t3...")
+    time.sleep(1)
+    print("\t2...")
+    time.sleep(1)
+    print("\t1...")
+    time.sleep(1)
+    print("\tGo!\n")
+
+    racing = True
+    animal1_distance = 0
+    animal2_distance = 0
+    timer = 0
+    while(racing):
+        
+        animal1_distance = animal1.speed*timer # Find the distance animal1 has traveled, using the timestep as "time"
+        animal2_distance = animal2.speed*timer # Find the distance animal2 has traveled, using the timestep as "time"
+        distance1 = ["_"]*animal1_distance
+        distance2 = ["_"]*animal2_distance
+        print("\n\n\n\n\n\n\n\n--------------------------------------------------------------------------------------------------------------------------------")
+        print(str(distance1) + "  -@@@['^']  [" + animal1.name + "]") # update a visual representation of the distance
+        print(str(distance2) + "  U('^')U  [" + animal2.name + "]")
+        print("--------------------------------------------------------------------------------------------------------------------------------\n\n")
+
+        timer = timer + 1
+        time.sleep(1)
+        if animal1_distance >= track_length or animal2_distance >= track_length:
+            racing = False # If one of the animals distance has exceeded or is equal to the track length, stop the race
+            if animal1_distance > animal2_distance: # If animal1 distance is greater, they Won
+                print("\t" + animal1.name + " wins the race! Congratulations")
+                animal1.speak()
+                print("\n")
+            elif animal1_distance < animal2_distance: # If animal2 distance is greater, they Won
+                print("\t" + animal2.name + " wins the race! Congratulations")
+                animal2.speak
+                print("\n")
+            elif animal1_distance == animal2_distance: # If they're distances are equal, let's say we've tied
+                print("looks like we ended off in a tie! Maybe next time we'll have a winner.")
+    
 
 def main():
     ### RANDOM NUMBER GENERATOR ###
@@ -408,62 +721,76 @@ def main():
     ## Object Declaration ##
     obj = Lab2()
 
-    # ### -- SORTING ALGORITHMS -- ###
-    # # Create a new file to write our time information too
-    # timeFile = open("timeFile.csv", "w")
-    # timeFile.write("\n")
-    # timeFile.write(",SORTING ALGORITHM APPROXIMATE TIME-LENGTH\n,(Each iteration uses a new random array - each sorting algorithm is tested on the same array)\n,\n")
-    # timeFile.write(",,,SORT TYPE and TIME (seconds)\n")
-    # timeFile.write(",,,BUBBLE,,,,,SELECTION,,,,,INSERTION,,,,,MERGE,,,,,\n")
-    # timeFile.write(",,SIZE,8,200,500,1000,10000,8,200,500,1000,10000,8,200,500,1000,10000,8,200,500,1000,10000,\n")
-    # timeFile.write(",ITERATION")
+    ### -- SORTING ALGORITHMS -- ###
+    # Create a new file to write our time information too
+    timeFile = open("timeFile.csv", "w")
+    timeFile.write("\n")
+    timeFile.write(",SORTING ALGORITHM APPROXIMATE TIME-LENGTH\n,(Each iteration uses a new random array - each sorting algorithm is tested on the same array)\n,\n")
+    timeFile.write(",,,SORT TYPE and TIME (seconds)\n")
+    timeFile.write(",,,BUBBLE,,,,,SELECTION,,,,,INSERTION,,,,,MERGE,,,,,\n")
+    timeFile.write(",,SIZE,8,200,500,1000,10000,8,200,500,1000,10000,8,200,500,1000,10000,8,200,500,1000,10000,\n")
+    timeFile.write(",ITERATION")
 
-    # for i in range(10):
+    for i in range(100):
 
-    #     timeFile = open("timeFile.csv", "a")
-    #     timeFile.write("," + str(i+1))
-    #     timeFile.close()
-    #     # Get random arrays:
-    #     ran_array_8 = random_array_generator(8)
-    #     ran_array_200 = random_array_generator(200)
-    #     ran_array_500 = random_array_generator(500)
-    #     ran_array_1000 = random_array_generator(1000)
-    #     ran_array_10000 = random_array_generator(10000)
+        timeFile = open("timeFile.csv", "a")
+        timeFile.write("," + str(i+1))
+        timeFile.close()
+        # Get random arrays:
+        ran_array_8 = random_array_generator(8)
+        ran_array_200 = random_array_generator(200)
+        ran_array_500 = random_array_generator(500)
+        ran_array_1000 = random_array_generator(1000)
+        ran_array_10000 = random_array_generator(10000)
 
-    #     # length 8 random array
-    #     obj.bubble_sort(ran_array_8)
-    #     obj.bubble_sort(ran_array_200)
-    #     obj.bubble_sort(ran_array_500)
-    #     obj.bubble_sort(ran_array_1000)
-    #     obj.bubble_sort(ran_array_10000)
+        # length 8 random array
+        obj.bubble_sort(ran_array_8)
+        obj.bubble_sort(ran_array_200)
+        obj.bubble_sort(ran_array_500)
+        obj.bubble_sort(ran_array_1000)
+        obj.bubble_sort(ran_array_10000)
 
-    #     obj.selection_sort(ran_array_8)
-    #     obj.selection_sort(ran_array_200)
-    #     obj.selection_sort(ran_array_500)
-    #     obj.selection_sort(ran_array_1000)
-    #     obj.selection_sort(ran_array_10000)
+        obj.selection_sort(ran_array_8)
+        obj.selection_sort(ran_array_200)
+        obj.selection_sort(ran_array_500)
+        obj.selection_sort(ran_array_1000)
+        obj.selection_sort(ran_array_10000)
 
-    #     obj.insertion_sort(ran_array_8)
-    #     obj.insertion_sort(ran_array_200)
-    #     obj.insertion_sort(ran_array_500)
-    #     obj.insertion_sort(ran_array_1000)
-    #     obj.insertion_sort(ran_array_10000)
+        obj.insertion_sort(ran_array_8)
+        obj.insertion_sort(ran_array_200)
+        obj.insertion_sort(ran_array_500)
+        obj.insertion_sort(ran_array_1000)
+        obj.insertion_sort(ran_array_10000)
 
-    #     obj.merge_sort(ran_array_8)
-    #     obj.merge_sort(ran_array_200)
-    #     obj.merge_sort(ran_array_500)
-    #     obj.merge_sort(ran_array_1000)
-    #     obj.merge_sort(ran_array_10000)
+        obj.merge_sort(ran_array_8)
+        obj.merge_sort(ran_array_200)
+        obj.merge_sort(ran_array_500)
+        obj.merge_sort(ran_array_1000)
+        obj.merge_sort(ran_array_10000)
 
-    #     timeFile = open("timeFile.csv", "a")
-    #     timeFile.write("\n,")
-    #     timeFile.close()
+        timeFile = open("timeFile.csv", "a")
+        timeFile.write("\n,")
+        timeFile.close()
     
     ### -- READ AND WRITER -- ###
     obj.readFile("testNumbers.txt")
 
-    ### -- VIgenere -- ###
-    obj.vigenere("I like balls", "PIPEBOMB")
+    ### -- Vgenere -- ###
+    print("\nVigenere encrypt Program\n--------------------")
+    obj.vigenere("test string", "test")
+
+    ### -- Vigenere decrypt -- ###
+    print("\nVigenere Decrypt Program\n--------------------")
+    obj.decrypt("cipher.txt", None, "validwords.txt", None)
+    # obj.decrypt(None, "qrtyl(fnncqqtpo_kurtyy)", None, "balls")
+
+    ### -- Animal -- ###
+    print("\nAnimal Program\n--------------------\n")
+    tortise = Runner("The Tortise", "Green", 2)
+    hare = Runner("The Hare", "Tan", 10)
+    animal_race(animal1=tortise, animal2=hare, track_length=100)
+    
+
 
 if __name__ == '__main__':
     main()
