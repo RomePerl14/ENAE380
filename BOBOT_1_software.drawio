@@ -1,55 +1,279 @@
-<mxfile host="app.diagrams.net" modified="2023-10-16T15:12:06.876Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="op_B5KZ0iYFHJ5itLJtA" version="22.0.4" type="device">
+<mxfile host="app.diagrams.net" modified="2023-10-16T17:16:43.812Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="o7xWRWaDJnEWNVmgJXqG" version="22.0.4" type="device">
   <diagram name="Page-1" id="tYbwNAo_b-sIVdlNEphK">
-    <mxGraphModel dx="530" dy="275" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="3563" dy="1382" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="4qtm8_j8A-9qr2PiBOD8-1" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="810" y="140" width="510" height="510" as="geometry" />
+        <mxCell id="4qtm8_j8A-9qr2PiBOD8-1" value="" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-40" y="130" width="980" height="1080" as="geometry" />
         </mxCell>
-        <mxCell id="4qtm8_j8A-9qr2PiBOD8-2" value="Bobot-1 &lt;br&gt;SOFTWARE ARCHITECTURE&lt;br&gt;rev.1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="325" y="160" width="200" height="30" as="geometry" />
+        <mxCell id="4qtm8_j8A-9qr2PiBOD8-2" value="Bobot-1 &lt;br&gt;SOFTWARE ARCHITECTURE&lt;br&gt;rev.1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="362" y="150" width="200" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="4qtm8_j8A-9qr2PiBOD8-5" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;*&lt;u&gt;note&lt;/u&gt;: There are two start up sequences for Bobot-1, and ON_BOOT mode, which will automatically start the software upon power on, and DEV_MODE, which won&#39;t automatically start the software on power on. While they are identical, this chart describes the former&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="213" y="210" width="425" height="30" as="geometry" />
+        <mxCell id="4qtm8_j8A-9qr2PiBOD8-5" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;*&lt;u&gt;note&lt;/u&gt;: There are two start up sequences for Bobot-1, and ON_BOOT mode, which will automatically start the software upon power on, and DEV_MODE, which won&#39;t automatically start the software on power on. While they are identical, this chart describes the former&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="250" y="200" width="425" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="4qtm8_j8A-9qr2PiBOD8-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4qtm8_j8A-9qr2PiBOD8-6" target="4qtm8_j8A-9qr2PiBOD8-7">
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="4qtm8_j8A-9qr2PiBOD8-6" target="CneK1_U-Qj7DB6JjQh8P-6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="4qtm8_j8A-9qr2PiBOD8-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4qtm8_j8A-9qr2PiBOD8-6" target="4qtm8_j8A-9qr2PiBOD8-11">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="4qtm8_j8A-9qr2PiBOD8-6" value="MACHINE&lt;br&gt;BOOT-UP" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="170" y="270" width="110" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="4qtm8_j8A-9qr2PiBOD8-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4qtm8_j8A-9qr2PiBOD8-6" target="4qtm8_j8A-9qr2PiBOD8-14">
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-3" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Lifecycle_node (Timer)&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="400" width="140" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-16" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;- tracks the elapsed time of flight by counting every second&lt;br&gt;- Publishes the elapsed time at 1 Hz to the /timer topic&lt;br&gt;- on initialization, sends a service request to the Manager node to get last recorded elapsed time incase of a reboot mid-flight&lt;br&gt;- Managed nodes allow you to &quot;start&quot; a node without allowing it to do anything,for synchronization&lt;br&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="CneK1_U-Qj7DB6JjQh8P-3">
+          <mxGeometry y="20" width="140" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-4" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Lifecycle_node &lt;br&gt;(Altitude Monitor)&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=30;" vertex="1" parent="1">
+          <mxGeometry x="380" y="400" width="140" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-17" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;- monitors the altitude of the balloon (method undetermined), and will begin the main program at certain altitude&lt;br&gt;- publishes the altitude to the the /alt node&lt;br&gt;- Managed nodes allow you to &quot;start&quot; a node without allowing it to do anything,for synchronization&lt;br&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="CneK1_U-Qj7DB6JjQh8P-4">
+          <mxGeometry y="30" width="140" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-6" target="CneK1_U-Qj7DB6JjQh8P-9">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="250" y="360" />
-              <mxPoint x="390" y="360" />
+              <mxPoint x="365" y="350" />
+              <mxPoint x="440" y="350" />
+              <mxPoint x="440" y="315" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="4qtm8_j8A-9qr2PiBOD8-6" value="ON BOOT-UP" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
-          <mxGeometry x="200" y="270" width="100" height="50" as="geometry" />
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-6" target="CneK1_U-Qj7DB6JjQh8P-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="365" y="380" />
+              <mxPoint x="270" y="380" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="4qtm8_j8A-9qr2PiBOD8-7" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
-          <mxGeometry x="380.5" y="256.57" width="180" height="76.87" as="geometry" />
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-6" target="CneK1_U-Qj7DB6JjQh8P-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="365" y="380" />
+              <mxPoint x="450" y="380" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="4qtm8_j8A-9qr2PiBOD8-9" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;ros2 launch manager_node&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="290.5" y="260" width="90" height="30" as="geometry" />
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-6" target="CneK1_U-Qj7DB6JjQh8P-83">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="365" y="350" />
+              <mxPoint x="30" y="350" />
+              <mxPoint x="30" y="870" />
+              <mxPoint x="155" y="870" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="4qtm8_j8A-9qr2PiBOD8-11" value="&lt;i style=&quot;font-size: 8px;&quot;&gt;&lt;br&gt;&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;horizontal=1;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="190" y="380" width="120" height="60" as="geometry" />
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-6" target="CneK1_U-Qj7DB6JjQh8P-85">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="365" y="350" />
+              <mxPoint x="30" y="350" />
+              <mxPoint x="30" y="870" />
+              <mxPoint x="395" y="870" />
+            </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="4qtm8_j8A-9qr2PiBOD8-13" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;ros2 launch timer_node&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="190" y="333.44" width="55" height="30" as="geometry" />
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-6" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;u&gt;startup script&lt;/u&gt;: (boboot_bootup.sh)&lt;br&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- Source ROS 2&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;- Source &lt;b&gt;bobot-1/&lt;/b&gt; workspace&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;- call ROS 2 launch file&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="300" y="275" width="130" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="4qtm8_j8A-9qr2PiBOD8-14" value="Lifecycle_node&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;verticalAlign=top;fontStyle=2" vertex="1" parent="1">
-          <mxGeometry x="330" y="380" width="120" height="60" as="geometry" />
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-9" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Manager Node&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="260" width="190" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="4qtm8_j8A-9qr2PiBOD8-16" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;ros2 launch alt_monitor_node&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="270" y="330" width="90" height="30" as="geometry" />
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-19" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;- Manages all of the nodes running, by passing data along from one process to another in a centralized location. Also continually writes data to several files to save informaiton incase of in-flight reboot.&lt;br&gt;- Logs data, errors, and what time events start&lt;br&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="CneK1_U-Qj7DB6JjQh8P-9">
+          <mxGeometry y="20" width="190" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="4qtm8_j8A-9qr2PiBOD8-17" value="&lt;i&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Lifecycle_node&lt;/font&gt;&lt;/i&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="220" y="370" width="60" height="30" as="geometry" />
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-20" target="CneK1_U-Qj7DB6JjQh8P-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-20" value="On initialize, service call to last recored elapsed time" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="216.5" y="610" width="107" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-16" target="CneK1_U-Qj7DB6JjQh8P-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-27" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;writes elapsed time to file&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="410" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-29" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;writes log messages to file&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="410" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-30" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;writes error logs to file&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="410" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-19" target="CneK1_U-Qj7DB6JjQh8P-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-19" target="CneK1_U-Qj7DB6JjQh8P-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-19" target="CneK1_U-Qj7DB6JjQh8P-30">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="615" y="390" />
+              <mxPoint x="745" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-35" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;writes # of reboots to file&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="410" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-19" target="CneK1_U-Qj7DB6JjQh8P-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-37" target="CneK1_U-Qj7DB6JjQh8P-65">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-37" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/timer&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/altitude&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;/get_last_timer_val&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;/node error states&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;/node heartbeats&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="580" y="460" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-40" value="Sets up topics and services" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="750" y="290" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.112;entryY=1.021;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-20" target="CneK1_U-Qj7DB6JjQh8P-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-44" value="service call to /get_last_timer_val" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="370" y="620" width="185" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-45" target="CneK1_U-Qj7DB6JjQh8P-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-45" value="locally save last timer value as a class property" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="700" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-47" target="CneK1_U-Qj7DB6JjQh8P-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-47" target="CneK1_U-Qj7DB6JjQh8P-37">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="700" />
+              <mxPoint x="620" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-47" value="connect to hardware, confirm that data is being collected" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="690" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-17" target="CneK1_U-Qj7DB6JjQh8P-47">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="450" y="580" />
+              <mxPoint x="570" y="580" />
+              <mxPoint x="570" y="660" />
+              <mxPoint x="450" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-51" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Lifecycle_node (Jerk)&lt;/span&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="400" width="140" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-52" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;- Continually Jerks the motors during flight until the desired altitude (or time limit) is reached&lt;br&gt;- Hypothesis is that continually jerking the motors will allow them to function better in the upper atmosphere&lt;br&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="CneK1_U-Qj7DB6JjQh8P-51">
+          <mxGeometry y="20" width="140" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-53" target="CneK1_U-Qj7DB6JjQh8P-56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-53" value="Connect to hardware, confirm the position data is being read from servos" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="690" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-52" target="CneK1_U-Qj7DB6JjQh8P-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-56" target="CneK1_U-Qj7DB6JjQh8P-61">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="560" y="890" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-56" target="CneK1_U-Qj7DB6JjQh8P-65">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-56" value="&lt;u&gt;Monitor Errors&lt;br&gt;&lt;/u&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;if we&#39;ve had too many&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;repeated errors,&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 8px; background-color: initial;&quot;&gt;don&#39;t&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;span style=&quot;font-size: 8px; background-color: initial;&quot;&gt;continue with the setup&lt;/span&gt;&lt;/div&gt;" style="triangle;whiteSpace=wrap;html=1;align=left;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="555" y="710" width="135" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-61" target="4qtm8_j8A-9qr2PiBOD8-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="10" y="930" />
+              <mxPoint x="10" y="305" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-61" value="TOO MANY ERRORS:&lt;br&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;reboot the software automatically&lt;/font&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="510" y="890" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-65" target="CneK1_U-Qj7DB6JjQh8P-73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-65" value="If setup is all good, continue" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="730" y="740" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-68" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Be ready to start publishing (but we won&#39;t publish until the node is told to start&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="630" y="590" width="110" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-19" target="CneK1_U-Qj7DB6JjQh8P-65">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="890" y="348" />
+              <mxPoint x="890" y="640" />
+              <mxPoint x="770" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-70" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;monitor error state&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="770" y="610" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-19" target="CneK1_U-Qj7DB6JjQh8P-37">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="870" y="325" />
+              <mxPoint x="870" y="505" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-73" target="CneK1_U-Qj7DB6JjQh8P-75">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-73" value="- Turn on all nodes&lt;br&gt;- begin monitoring data&lt;br&gt;- begin logging data" style="rounded=1;whiteSpace=wrap;html=1;align=left;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="690" y="870" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-75" target="CneK1_U-Qj7DB6JjQh8P-95">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-75" value="After reaching a desired altitude (or after a certain timer value has passed), begin main software:&lt;br&gt;- start camera&lt;br&gt;- start controller manager&lt;br&gt;- start controllers&lt;br&gt;- start computer visioning process" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="630" y="970" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-83" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Lifecycle_node (camera and camera visioning)&lt;/span&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="980" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-84" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;- Starts the computer visioning algorithms&lt;br&gt;&lt;br&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="CneK1_U-Qj7DB6JjQh8P-83">
+          <mxGeometry y="20" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-85" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Controller Manager node&lt;/span&gt;" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="980" width="230" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-86" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;- Starts the ros2_control Controller Manager node for&amp;nbsp; for higher level robot control (above just joint level control)&lt;br&gt;- Don&#39;t load any controllers until we reach the desired altitude&lt;br&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" vertex="1" parent="CneK1_U-Qj7DB6JjQh8P-85">
+          <mxGeometry y="20" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-93" value="start nodes that only begin after reaching desired altitude" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="840" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-95" target="CneK1_U-Qj7DB6JjQh8P-61">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-100" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CneK1_U-Qj7DB6JjQh8P-95" target="CneK1_U-Qj7DB6JjQh8P-99">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-95" value="begin calibration sequence" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="475" y="1120" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="CneK1_U-Qj7DB6JjQh8P-99" value="&lt;u&gt;If everything is all good&lt;/u&gt;:&lt;br&gt;being doing cool things&lt;br&gt;(This is outside of the project)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="230" y="1125" width="170" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
