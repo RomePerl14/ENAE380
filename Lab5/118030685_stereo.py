@@ -56,19 +56,44 @@ def make_autostereogram(depthmap, pattern, shift_amplitude=0.1, invert=False):
     return autostereogram
 
 
-pattern = make_pattern(shape=(128,64))
-display(pattern)
+# pattern = make_pattern(shape=(128,64))
+# display(pattern)
 
-depthmap = create_circular_depthmap(radius=150)
-display(depthmap, colorbar=True)
+# depthmap = create_circular_depthmap(radius=150)
+# display(depthmap, colorbar=True)
 
-autostereogram = make_autostereogram(depthmap, pattern, invert=True)
-display(autostereogram)
+# autostereogram = make_autostereogram(depthmap, pattern, invert=True)
+# display(autostereogram)
 
-depthmap = create_circular_depthmap(center=(200, 300), radius=100) + \
-           create_circular_depthmap(center=(450, 500), radius=100) + \
-           create_circular_depthmap(center=(200, 550), radius=150)
-depthmap = normalize(depthmap)
-display(depthmap, colorbar=True)
-autostereogram = make_autostereogram(depthmap, pattern)
-display(autostereogram)
+# depthmap = create_circular_depthmap(center=(200, 300), radius=100) + \
+#            create_circular_depthmap(center=(450, 500), radius=100) + \
+#            create_circular_depthmap(center=(200, 550), radius=150)
+# depthmap = normalize(depthmap)
+# display(depthmap, colorbar=True)
+# autostereogram = make_autostereogram(depthmap, pattern)
+# display(autostereogram)
+
+'''
+Romeos Code
+Romeo Perlstein
+section 0102
+'''
+# make a noise pattern using the noise function
+pattern = make_pattern((64,64)) # make our noise 64x64
+display(pattern) # display the pattern
+
+# Create a depth map with silly little circles (didn't want to make another function to draw a different shape, its due soon)
+d_map = create_circular_depthmap(center=(150, 300), radius=75) + \
+           create_circular_depthmap(center=(350, 575), radius=125) + \
+           create_circular_depthmap(center=(200, 400), radius=150) + \
+           create_circular_depthmap(center=(250, 250), radius=100)+ \
+           create_circular_depthmap(center=(115, 115), radius=115)+ \
+           create_circular_depthmap(radius=200) # I made a few here because I wanted to make something different enough. The final depth map looks pretty sweet!
+d_map = normalize(d_map) # Normalize the depth maps with each other
+display(d_map, colorbar=True) # display them
+
+# Create an autostereogram using the autosereogram function
+autoster = make_autostereogram(d_map, pattern) # Use our pattern and d_map
+display(autoster) # display it
+
+
