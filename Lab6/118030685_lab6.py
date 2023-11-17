@@ -185,6 +185,7 @@ def oregon_trail(weighted_states=None):
 		file = weighted_states # locally save the file like before
 		if not os.path.exists(file): # Check if it exists
 			print("\n\tCannot auto-find file, [ " + weighted_states + " ] - It could not be found!\n\t")
+			print("Hey Akinola, Patrick, Adam, Denis, or Evan... did you run the weights() function?")
 			return
 
 	## Do all of the stuff we did in the weights() function again 
@@ -303,7 +304,7 @@ def oregon_trail(weighted_states=None):
 			print("Welcome to " + current_node + "!") # If we've traveled beyond our starting point state, give em a little welcome
 		print("States nearby that you can travel to:")
 		print("\t" + str(list(Graph.neighbors(current_node)))) # Display the neighbors of the current node that we're on
-		res = input("What state would you like to travel to next? ")
+		res = input("What state would you like to travel to next?\n\t")
 		if res in list(Graph.neighbors(current_node)): # Check if the input is one of the neighbors of the current node we're on
 			print("Moving to " + res) # If so, "move" to it
 			edge_data = Graph.get_edge_data(current_node, res) # Get the edge data
@@ -338,7 +339,7 @@ def oregon_trail(weighted_states=None):
 	if player_weight <= shortest_path_total_weight: # If the players weight was less than the shortest path weight, winner winner chicken dinner
 		print("\nCongrats, you won! You took the best path to your destination. Remember, the shortest path is not always the best path!\n\n")
 	elif player_weight > shortest_path_total_weight: # If not, they LOST
-		print("\nYou lost! Better luck next time, the Oregan Trail is a ruthless path. Remeber, the shortest path isn't always the best path!\n\n")
+		print("\nYou lost! Better luck next time, the Oregan Trail is a ruthless journey. Remeber, the shortest path isn't always the best path!\n\n")
 	
 	# Create a figure for the players path
 	player_edges = list(zip(player_path,player_path[1:])) # Get a list of tuples from the shortest path we found
